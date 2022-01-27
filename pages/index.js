@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 import { AuroraWrapper, AuroraBall, AuroraFilter } from '../components/AuroraBackground/AuroraBall'
 import styled from 'styled-components'
 import { Carousel } from '../components/RotateAndFadeBro/Carousel'
+import { CarouselCards } from '../components/CarouselCards'
 
 const MovedToAStyledComponent = styled.div`
   display: flex;
@@ -33,14 +34,14 @@ const TestImage = styled.div`
 `
 
 export default function Home() {
-  // It uh... breaks after 5 items (maybe changing it so there are always less than 5 items and the items get pushed from a hidden array to a displayed array)
+  // It uh... breaks after 6 items (maybe changing it so there are always less than 5 items and the items get pushed from a hidden array to a displayed array)
   const items = [
-    <TestImage key={0} src='Girl.png' />,
-    <TestImage key={1} src='Girl.png' />,
-    <TestImage key={2} src='Girl.png' />,
-    <TestImage key={3} src='Girl.png' />,
-    <TestImage key={4} src='Girl.png' />,
-    <TestImage key={5} src='Girl.png' />,
+    <CarouselCards key={0} />,
+    <CarouselCards key={1} />,
+    <CarouselCards key={2} />,
+    <CarouselCards key={3} />,
+    <CarouselCards key={4} />,
+    <CarouselCards key={5} />,
   ]
 
   const settings = {

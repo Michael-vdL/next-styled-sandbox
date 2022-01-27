@@ -90,23 +90,26 @@ export const Carousel = ({ items, ...settings }) => {
   }, [intervalRef])
 
   return (
-    <CarouselContainer>
-      <CarouselInner containerHeight={containerHeight} containerWidth={containerWidth}>
-        {items.map((item, i) => {
-          let shiftValue = determinePlacement(i)
-          return (
-            <CarouselItem
-              key={i}
-              yOffset={yOffset}
-              visible={Math.abs(shiftValue) <= visibleStyleThreshold}
-              style={{
-                transform: `translate(${Math.abs(shiftValue) / 2}px, ${shiftValue}px)`,
-              }}>
-              {item}
-            </CarouselItem>
-          )
-        })}
-      </CarouselInner>
-    </CarouselContainer>
+    <>
+      <button onClick={() => clearInterval(intervalRef.current)}>Stop the wheel pls</button>
+      <CarouselContainer>
+        <CarouselInner containerHeight={containerHeight} containerWidth={containerWidth}>
+          {items.map((item, i) => {
+            let shiftValue = determinePlacement(i)
+            return (
+              <CarouselItem
+                key={i}
+                yOffset={yOffset}
+                visible={Math.abs(shiftValue) <= visibleStyleThreshold}
+                style={{
+                  transform: `translate(${Math.abs(shiftValue) / 2}px, ${shiftValue}px)`,
+                }}>
+                {item}
+              </CarouselItem>
+            )
+          })}
+        </CarouselInner>
+      </CarouselContainer>
+    </>
   )
 }
