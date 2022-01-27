@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
 
 const ParentGrid = styled.div`
   height: auto;
@@ -10,7 +10,7 @@ const ParentGrid = styled.div`
   /* background: lightgreen; */
   align-items: start;
   justify-items: center;
-`;
+`
 
 const PersonGridEle = styled.div`
   height: 140%;
@@ -22,15 +22,15 @@ const PersonGridEle = styled.div`
   &.filterElement {
     filter: blur(40px);
   }
-`;
+`
 
 const PersonThing = styled.div`
-    width: 80%;
-    height: 300px;
-    grid-column: ${(props) => props.gridCol}
-    align-items: center;
-    justify-content: center;
-`;
+  width: 80%;
+  height: 300px;
+  grid-column: ${(props) => props.gridCol};
+  align-items: center;
+  justify-content: center;
+`
 
 const ColorKeyframe = keyframes`
     0%{ 
@@ -45,7 +45,7 @@ const ColorKeyframe = keyframes`
     100%{
         transform: scale(1);
     }
-`;
+`
 
 const LightSource = styled.div`
   height: 170px;
@@ -61,7 +61,7 @@ const LightSource = styled.div`
   margin: ${(props) => props.margin};
   :hover {
   }
-`;
+`
 
 const HeadModel = styled.div`
   background-image: url(${(props) => props.src});
@@ -79,7 +79,7 @@ const HeadModel = styled.div`
   transform: scale(1);
   opacity: 1;
   border-radius: 10px;
-`;
+`
 
 const NameBox = styled.div`
   height: 35%;
@@ -92,7 +92,7 @@ const NameBox = styled.div`
   grid-column: ${(props) => props.gridCol};
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
   padding: 10px;
-`;
+`
 
 const StrikeKeyframes = keyframes`
   0%{
@@ -101,7 +101,7 @@ const StrikeKeyframes = keyframes`
   100%{
     width: 100%;
   }
-`;
+`
 const StrikeThroughText = styled.span`
   position: relative;
   :after {
@@ -117,9 +117,9 @@ const StrikeThroughText = styled.span`
     animation-timing-function: linear;
     animation-fill-mode: forwards;
   }
-`;
+`
 
-const LightSource2 = styled(LightSource)``;
+const LightSource2 = styled(LightSource)``
 
 export default function PeopleGrid() {
   return (
@@ -136,7 +136,7 @@ export default function PeopleGrid() {
       </PersonGridEle>
 
       <NameBox gridCol='1/2'>
-        Hi I'm <span className='strike'>an idiot</span>. Hire me
+        {"Hi I'm"} <span className='strike'>an idiot</span>. Hire me
       </NameBox>
 
       <PersonGridEle className='filterElement' gridCol={'2/3'}>
@@ -153,5 +153,5 @@ export default function PeopleGrid() {
 
       <NameBox gridCol='2/3' />
     </ParentGrid>
-  );
+  )
 }
